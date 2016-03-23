@@ -1,0 +1,40 @@
+Base De Datos: BD_Abogados_Easy_Soft
+
+Tabla: Cliente
+
+
+Id_Cliente (Int) No Nul PK
+img (image)
+Codigo (varchar50)
+NoCedula (varchar50)
+NoPasaporte (varchar50)
+Nombres (varchar50)
+Apellidos (varchar50)
+Apodo (varchar50)
+EMail (varchar50)
+Contacto (varchar50)
+Direccion (varchar50)
+Provincia (varchar50)
+Municipio (varchar50)
+TelCasa (varchar50)
+TelTrabajo (varchar50)
+Cel (varchar50)
+EstadoCivil (varchar50)
+Empleado (varchar50)
+DirecEmpleo (varchar50)
+ServioArealizar (varchar50)
+CostoTotServ (Int)
+Abono (Int)
+FiscaliaCorresp (varchar50)
+ProcuradorCorresp (varchar50)
+Notas (varchar50)
+FechaActual (varchar50)
+
+Tabla: Usuarios
+
+user_ID (Int) No Nul PK
+user_Name (varchar 25)
+user_Password (varchar 25)
+user_Level (varchar 25)
+Full_Name (varchar 25)
+
