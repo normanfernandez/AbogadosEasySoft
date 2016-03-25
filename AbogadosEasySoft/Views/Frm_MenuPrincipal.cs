@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AbogadosEasySoft
+namespace AbogadosEasySoft.Views
 {
     public partial class Frm_MenuPrincipal : Form
     {
-        public Frm_MenuPrincipal()
+        private static Models.user usuario = null;
+
+        public Frm_MenuPrincipal(Models.user u)
         {
             InitializeComponent();
+            usuario = u;
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)

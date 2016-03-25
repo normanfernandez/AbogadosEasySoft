@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AbogadosEasySoft
+namespace AbogadosEasySoft.Views
 {
-    public partial class Frm_MenuCaja : Form
+    public partial class FrmMantenimientoUsuario : Form
     {
-        public Frm_MenuCaja()
+        public FrmMantenimientoUsuario()
         {
             InitializeComponent();
         }

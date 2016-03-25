@@ -1,4 +1,4 @@
-﻿namespace AbogadosEasySoft
+﻿namespace AbogadosEasySoft.Views
 {
     partial class Frm_MenuCaja
     {

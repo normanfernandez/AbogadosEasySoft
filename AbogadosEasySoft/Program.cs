@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AbogadosEasySoft.Views;
 
 namespace AbogadosEasySoft
 {
@@ -12,15 +13,11 @@ namespace AbogadosEasySoft
         /// Punto de entrada principal para la aplicación.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Splash sp = new Splash();
-            if (sp.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new Frm_CapturaDeClientes());
-            }
+            Application.Run(new Splash());
         }
     }
 }

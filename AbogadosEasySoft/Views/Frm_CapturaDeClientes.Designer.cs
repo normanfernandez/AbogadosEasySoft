@@ -1,4 +1,4 @@
-﻿namespace AbogadosEasySoft
+﻿namespace AbogadosEasySoft.Views
 {
     partial class Frm_CapturaDeClientes
     {
@@ -81,7 +81,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.maskedTexFechAct = new System.Windows.Forms.MaskedTextBox();
             this.ePvacio = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TxtNoPasaporte = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -91,11 +90,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.TxtCodigo = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ePvacio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -345,7 +343,6 @@
             this.TxtNoCedula.Name = "TxtNoCedula";
             this.TxtNoCedula.Size = new System.Drawing.Size(184, 20);
             this.TxtNoCedula.TabIndex = 34;
-            //       ojo      this.TxtNoCedula.Validated += new System.EventHandler(this.TxtNoCedula_Validated);
             // 
             // TxtNombre
             // 
@@ -474,7 +471,6 @@
             this.TxtCostoTotServ.Name = "TxtCostoTotServ";
             this.TxtCostoTotServ.Size = new System.Drawing.Size(220, 20);
             this.TxtCostoTotServ.TabIndex = 51;
-            //     ojo        this.TxtCostoTotServ.Validated += new System.EventHandler(this.TxtCostoTotServ_Validated);
             // 
             // TxtAbono
             // 
@@ -563,14 +559,6 @@
             // 
             this.ePvacio.ContainerControl = this;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 576);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1175, 177);
-            this.dataGridView1.TabIndex = 62;
-            // 
             // TxtNoPasaporte
             // 
             this.TxtNoPasaporte.Enabled = false;
@@ -654,32 +642,16 @@
             this.label14.TabIndex = 72;
             this.label14.Text = "Cel";
             // 
-            // TxtCodigo
+            // bindingSource1
             // 
-            this.TxtCodigo.Enabled = false;
-            this.TxtCodigo.Location = new System.Drawing.Point(73, 244);
-            this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.Size = new System.Drawing.Size(152, 20);
-            this.TxtCodigo.TabIndex = 74;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(12, 249);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(58, 16);
-            this.label25.TabIndex = 73;
-            this.label25.Text = "Codigo";
+            this.bindingSource1.DataSource = typeof(AbogadosEasySoft.Models.cliente);
             // 
             // Frm_CapturaDeClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1223, 765);
-            this.Controls.Add(this.TxtCodigo);
-            this.Controls.Add(this.label25);
+            this.ClientSize = new System.Drawing.Size(1103, 564);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.textBox1);
@@ -688,7 +660,6 @@
             this.Controls.Add(this.MskNoCedula);
             this.Controls.Add(this.TxtNoPasaporte);
             this.Controls.Add(this.label26);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.maskedTexFechAct);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnImgCedPasap);
@@ -744,8 +715,8 @@
             this.Text = "Datos Del Cliente";
             this.Load += new System.EventHandler(this.Frm_CapturaDeClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ePvacio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -806,7 +777,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.MaskedTextBox maskedTexFechAct;
         private System.Windows.Forms.ErrorProvider ePvacio;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox TxtNoPasaporte;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.MaskedTextBox MskNoCedula;
@@ -815,7 +785,6 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox TxtCodigo;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

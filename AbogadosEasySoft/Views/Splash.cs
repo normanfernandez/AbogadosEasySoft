@@ -8,22 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AbogadosEasySoft
+namespace AbogadosEasySoft.Views
 {
     public partial class Splash : Form
     {
         public Splash()
         {
             InitializeComponent();
-            Tiempo.Enabled = true;
-            Tiempo.Interval = 1000;
+            this.timer.Start();
         }
 
-        private void Tiempo_Tick(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
-            Tiempo.Stop();
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            this.timer.Stop();
+            Login login = new Login();
+            login.Closed += (s, args) => this.Close();
+            login.Show();
+            this.Hide();
         }
     }
 }
