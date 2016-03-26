@@ -2,16 +2,16 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AbogadosDataModels">
   <DataContextMoniker Name="/AbogadosDataModelsDataContext" />
   <nestedChildShapes>
-    <classShape Id="5d0dd4b7-14b0-4516-9bcc-65ab80e282a9" absoluteBounds="4, 0.875, 2, 5.6169254557291657">
-      <DataClassMoniker Name="/AbogadosDataModelsDataContext/cliente" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5d9cb689-9af4-430c-9372-a14d8d135ffd" absoluteBounds="4.015, 1.335, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="7b55960f-12e6-480f-862d-c842afb4a7b6" absoluteBounds="1.5, 1.125, 2, 1.7708968098958331">
       <DataClassMoniker Name="/AbogadosDataModelsDataContext/user" />
       <nestedChildShapes>
         <elementListCompartment Id="3fcab2af-db86-4d42-96ee-f8087beb1140" absoluteBounds="1.5150000000000001, 1.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea2a2620-7e73-4f81-b683-a35a90b57c65" absoluteBounds="3.875, 1.625, 2, 5.6169254557291657">
+      <DataClassMoniker Name="/AbogadosDataModelsDataContext/cliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fecf08f8-8bf4-4839-bd9f-f531b477df22" absoluteBounds="3.89, 2.085, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

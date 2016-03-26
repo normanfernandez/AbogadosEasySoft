@@ -54,6 +54,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AbogadosDataModels.dbml</DependentUpon>
     </Compile>
+    <Compile Include="PictureBinary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Views\FrmMantenimientoUsuario.cs">
       <SubType>Form</SubType>

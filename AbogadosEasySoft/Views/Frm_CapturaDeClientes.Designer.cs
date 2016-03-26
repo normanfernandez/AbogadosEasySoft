@@ -33,7 +33,6 @@
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -63,7 +62,6 @@
             this.TxtProvincia = new System.Windows.Forms.TextBox();
             this.TxtMunicipio = new System.Windows.Forms.TextBox();
             this.TxtTelCasa = new System.Windows.Forms.TextBox();
-            this.TxtTelTrabajo = new System.Windows.Forms.TextBox();
             this.TxtCel = new System.Windows.Forms.TextBox();
             this.TxtEstadoCivil = new System.Windows.Forms.TextBox();
             this.TxtEmpleo = new System.Windows.Forms.TextBox();
@@ -78,7 +76,6 @@
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.BtnImgCedPasap = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.maskedTexFechAct = new System.Windows.Forms.MaskedTextBox();
             this.ePvacio = new System.Windows.Forms.ErrorProvider(this.components);
             this.TxtNoPasaporte = new System.Windows.Forms.TextBox();
@@ -87,13 +84,15 @@
             this.MskNoCedula = new System.Windows.Forms.MaskedTextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPasaporte = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.txtSegundoNombre = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtSegundoApellido = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ePvacio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -135,16 +134,6 @@
             this.label3.Size = new System.Drawing.Size(110, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "Telefono Casa";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(379, 169);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 16);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Telefono Trabajo";
             // 
             // label5
             // 
@@ -270,7 +259,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(12, 445);
+            this.label18.Location = new System.Drawing.Point(13, 462);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(69, 16);
             this.label18.TabIndex = 24;
@@ -280,7 +269,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(13, 405);
+            this.label19.Location = new System.Drawing.Point(21, 436);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(47, 16);
             this.label19.TabIndex = 25;
@@ -290,7 +279,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(13, 365);
+            this.label20.Location = new System.Drawing.Point(13, 409);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(54, 16);
             this.label20.TabIndex = 26;
@@ -302,19 +291,19 @@
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(13, 325);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(74, 16);
+            this.label21.Size = new System.Drawing.Size(115, 16);
             this.label21.TabIndex = 27;
-            this.label21.Text = "Apellidos";
+            this.label21.Text = "Primer Apellido";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(12, 285);
+            this.label22.Location = new System.Drawing.Point(13, 249);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(71, 16);
+            this.label22.Size = new System.Drawing.Size(112, 16);
             this.label22.TabIndex = 28;
-            this.label22.Text = "Nombres";
+            this.label22.Text = "Primer Nombre";
             // 
             // label23
             // 
@@ -347,23 +336,23 @@
             // TxtNombre
             // 
             this.TxtNombre.Enabled = false;
-            this.TxtNombre.Location = new System.Drawing.Point(87, 281);
+            this.TxtNombre.Location = new System.Drawing.Point(131, 245);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(220, 20);
+            this.TxtNombre.Size = new System.Drawing.Size(177, 20);
             this.TxtNombre.TabIndex = 36;
             // 
             // TxtApellido
             // 
             this.TxtApellido.Enabled = false;
-            this.TxtApellido.Location = new System.Drawing.Point(87, 321);
+            this.TxtApellido.Location = new System.Drawing.Point(134, 321);
             this.TxtApellido.Name = "TxtApellido";
-            this.TxtApellido.Size = new System.Drawing.Size(220, 20);
+            this.TxtApellido.Size = new System.Drawing.Size(173, 20);
             this.TxtApellido.TabIndex = 37;
             // 
             // TxtApodo
             // 
             this.TxtApodo.Enabled = false;
-            this.TxtApodo.Location = new System.Drawing.Point(73, 361);
+            this.TxtApodo.Location = new System.Drawing.Point(73, 405);
             this.TxtApodo.Name = "TxtApodo";
             this.TxtApodo.Size = new System.Drawing.Size(220, 20);
             this.TxtApodo.TabIndex = 38;
@@ -371,7 +360,7 @@
             // TxtEmail
             // 
             this.TxtEmail.Enabled = false;
-            this.TxtEmail.Location = new System.Drawing.Point(65, 401);
+            this.TxtEmail.Location = new System.Drawing.Point(73, 432);
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(220, 20);
             this.TxtEmail.TabIndex = 39;
@@ -379,7 +368,7 @@
             // TxtContacto
             // 
             this.TxtContacto.Enabled = false;
-            this.TxtContacto.Location = new System.Drawing.Point(87, 441);
+            this.TxtContacto.Location = new System.Drawing.Point(88, 458);
             this.TxtContacto.Name = "TxtContacto";
             this.TxtContacto.Size = new System.Drawing.Size(220, 20);
             this.TxtContacto.TabIndex = 40;
@@ -416,18 +405,10 @@
             this.TxtTelCasa.Size = new System.Drawing.Size(173, 20);
             this.TxtTelCasa.TabIndex = 44;
             // 
-            // TxtTelTrabajo
-            // 
-            this.TxtTelTrabajo.Enabled = false;
-            this.TxtTelTrabajo.Location = new System.Drawing.Point(510, 165);
-            this.TxtTelTrabajo.Name = "TxtTelTrabajo";
-            this.TxtTelTrabajo.Size = new System.Drawing.Size(173, 20);
-            this.TxtTelTrabajo.TabIndex = 45;
-            // 
             // TxtCel
             // 
             this.TxtCel.Enabled = false;
-            this.TxtCel.Location = new System.Drawing.Point(415, 205);
+            this.TxtCel.Location = new System.Drawing.Point(415, 165);
             this.TxtCel.Name = "TxtCel";
             this.TxtCel.Size = new System.Drawing.Size(220, 20);
             this.TxtCel.TabIndex = 46;
@@ -526,6 +507,7 @@
             this.BtnCancelar.TabIndex = 58;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // openFileDialog1
             // 
@@ -542,10 +524,6 @@
             this.BtnImgCedPasap.UseVisualStyleBackColor = true;
             this.BtnImgCedPasap.Click += new System.EventHandler(this.BtnImgCedPasap_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // maskedTexFechAct
             // 
             this.maskedTexFechAct.Enabled = false;
@@ -553,7 +531,6 @@
             this.maskedTexFechAct.Name = "maskedTexFechAct";
             this.maskedTexFechAct.Size = new System.Drawing.Size(169, 20);
             this.maskedTexFechAct.TabIndex = 61;
-            this.maskedTexFechAct.Validated += new System.EventHandler(this.maskedTexFechAct_Validated);
             // 
             // ePvacio
             // 
@@ -590,7 +567,7 @@
             // MskNoCedula
             // 
             this.MskNoCedula.Location = new System.Drawing.Point(129, 39);
-            this.MskNoCedula.Mask = "000-0000000-0";
+            this.MskNoCedula.Mask = "###-#######-#";
             this.MskNoCedula.Name = "MskNoCedula";
             this.MskNoCedula.Size = new System.Drawing.Size(96, 20);
             this.MskNoCedula.TabIndex = 67;
@@ -615,12 +592,12 @@
             this.label28.TabIndex = 69;
             this.label28.Text = "Pasaporte";
             // 
-            // textBox1
+            // txtPasaporte
             // 
-            this.textBox1.Location = new System.Drawing.Point(252, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 20);
-            this.textBox1.TabIndex = 70;
+            this.txtPasaporte.Location = new System.Drawing.Point(252, 39);
+            this.txtPasaporte.Name = "txtPasaporte";
+            this.txtPasaporte.Size = new System.Drawing.Size(112, 20);
+            this.txtPasaporte.TabIndex = 70;
             // 
             // label29
             // 
@@ -636,15 +613,47 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(379, 209);
+            this.label14.Location = new System.Drawing.Point(379, 169);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(31, 16);
             this.label14.TabIndex = 72;
             this.label14.Text = "Cel";
             // 
-            // bindingSource1
+            // txtSegundoNombre
             // 
-            this.bindingSource1.DataSource = typeof(AbogadosEasySoft.Models.cliente);
+            this.txtSegundoNombre.Enabled = false;
+            this.txtSegundoNombre.Location = new System.Drawing.Point(148, 282);
+            this.txtSegundoNombre.Name = "txtSegundoNombre";
+            this.txtSegundoNombre.Size = new System.Drawing.Size(160, 20);
+            this.txtSegundoNombre.TabIndex = 74;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(13, 286);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(129, 16);
+            this.label25.TabIndex = 73;
+            this.label25.Text = "Segundo Nombre";
+            // 
+            // txtSegundoApellido
+            // 
+            this.txtSegundoApellido.Enabled = false;
+            this.txtSegundoApellido.Location = new System.Drawing.Point(151, 347);
+            this.txtSegundoApellido.Name = "txtSegundoApellido";
+            this.txtSegundoApellido.Size = new System.Drawing.Size(157, 20);
+            this.txtSegundoApellido.TabIndex = 76;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(13, 351);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(132, 16);
+            this.label30.TabIndex = 75;
+            this.label30.Text = "Segundo Apellido";
             // 
             // Frm_CapturaDeClientes
             // 
@@ -652,9 +661,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(1103, 564);
+            this.Controls.Add(this.txtSegundoApellido);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.txtSegundoNombre);
+            this.Controls.Add(this.label25);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label29);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPasaporte);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.MskNoCedula);
@@ -675,7 +688,6 @@
             this.Controls.Add(this.TxtEmpleo);
             this.Controls.Add(this.TxtEstadoCivil);
             this.Controls.Add(this.TxtCel);
-            this.Controls.Add(this.TxtTelTrabajo);
             this.Controls.Add(this.TxtTelCasa);
             this.Controls.Add(this.TxtMunicipio);
             this.Controls.Add(this.TxtProvincia);
@@ -705,7 +717,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnBuscar);
@@ -716,7 +727,6 @@
             this.Load += new System.EventHandler(this.Frm_CapturaDeClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ePvacio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -728,7 +738,6 @@
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -758,7 +767,6 @@
         private System.Windows.Forms.TextBox TxtProvincia;
         private System.Windows.Forms.TextBox TxtMunicipio;
         private System.Windows.Forms.TextBox TxtTelCasa;
-        private System.Windows.Forms.TextBox TxtTelTrabajo;
         private System.Windows.Forms.TextBox TxtCel;
         private System.Windows.Forms.TextBox TxtEstadoCivil;
         private System.Windows.Forms.TextBox TxtEmpleo;
@@ -774,17 +782,19 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button BtnImgCedPasap;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.MaskedTextBox maskedTexFechAct;
         private System.Windows.Forms.ErrorProvider ePvacio;
         private System.Windows.Forms.TextBox TxtNoPasaporte;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.MaskedTextBox MskNoCedula;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPasaporte;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.TextBox txtSegundoApellido;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtSegundoNombre;
+        private System.Windows.Forms.Label label25;
     }
 }

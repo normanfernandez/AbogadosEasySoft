@@ -58,6 +58,7 @@
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(254, 20);
             this.TxtUsuario.TabIndex = 1;
+            this.TxtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUsuario_KeyPress);
             // 
             // TxtContraseña
             // 
@@ -66,6 +67,7 @@
             this.TxtContraseña.PasswordChar = '*';
             this.TxtContraseña.Size = new System.Drawing.Size(254, 20);
             this.TxtContraseña.TabIndex = 2;
+            this.TxtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUsuario_KeyPress);
             // 
             // label1
             // 
