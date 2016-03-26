@@ -20,6 +20,7 @@ namespace AbogadosEasySoft.Views
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            //Se detiene el timer, se esconde el splash y se inicia la vista del login
             this.timer.Stop();
             Login login = new Login();
             login.Closed += (s, args) => this.Close();

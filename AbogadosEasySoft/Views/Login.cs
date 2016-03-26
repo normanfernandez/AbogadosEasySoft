@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace AbogadosEasySoft.Views
 {
@@ -26,15 +18,17 @@ namespace AbogadosEasySoft.Views
             Application.Exit();
         }
 
-        private void BtnAceptar_Click(object sender, EventArgs e)
+        public void TryLogin()
         {
             if (count < 3)
             {
-                Models.user usuario = UserDAO.SelectSingle(u => u.username == TxtUsuario.Text 
+                //Busca el usuario donde coincidad el username con password
+                Models.user usuario = UserDAO.SelectSingle(u => u.username == TxtUsuario.Text
                     && u.password == TxtContraseña.Text);
 
                 if (usuario != null)
                 {
+                    //Se encontro un usuario que coincide
                     Frm_MenuPrincipal menu = new Frm_MenuPrincipal(usuario);
                     menu.Closed += (s, args) => this.Close();
                     menu.Show();
@@ -42,14 +36,28 @@ namespace AbogadosEasySoft.Views
                     return;
                 }
 
+                //Se no encuentra el usuario y se agrega 1 al conteo
                 count++;
                 MessageBox.Show(this, "Usuario o contraseña incorrectos!");
             }
             else
             {
+                //Se cierra el programa por excesos de login
                 MessageBox.Show(this, "Cantidad de login excedidas!");
                 Application.Exit();
             }
+        }
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+            TryLogin();
+        }
+
+        private void TxtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Llama la funcion cuando se presiona la tecla enter en los textos
+            if (e.KeyChar == 13)
+                TryLogin();
         }
     }
 }
