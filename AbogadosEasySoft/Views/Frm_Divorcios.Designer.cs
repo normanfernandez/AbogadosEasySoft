@@ -30,6 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDemandanteSegundoApellido = new System.Windows.Forms.TextBox();
+            this.txtDemandanteApellido = new System.Windows.Forms.TextBox();
+            this.txtDemandanteSegundoNombre = new System.Windows.Forms.TextBox();
+            this.txtDemandanteNombre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -37,10 +41,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtDivorcioId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDemandanteNombre = new System.Windows.Forms.TextBox();
-            this.txtDemandanteSegundoNombre = new System.Windows.Forms.TextBox();
-            this.txtDemandanteApellido = new System.Windows.Forms.TextBox();
-            this.txtDemandanteSegundoApellido = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtDemandadoSegundoApellido = new System.Windows.Forms.TextBox();
             this.txtDemandadoApellido = new System.Windows.Forms.TextBox();
@@ -88,6 +88,34 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Demandante";
+            // 
+            // txtDemandanteSegundoApellido
+            // 
+            this.txtDemandanteSegundoApellido.Location = new System.Drawing.Point(102, 94);
+            this.txtDemandanteSegundoApellido.Name = "txtDemandanteSegundoApellido";
+            this.txtDemandanteSegundoApellido.Size = new System.Drawing.Size(100, 20);
+            this.txtDemandanteSegundoApellido.TabIndex = 7;
+            // 
+            // txtDemandanteApellido
+            // 
+            this.txtDemandanteApellido.Location = new System.Drawing.Point(102, 68);
+            this.txtDemandanteApellido.Name = "txtDemandanteApellido";
+            this.txtDemandanteApellido.Size = new System.Drawing.Size(100, 20);
+            this.txtDemandanteApellido.TabIndex = 6;
+            // 
+            // txtDemandanteSegundoNombre
+            // 
+            this.txtDemandanteSegundoNombre.Location = new System.Drawing.Point(102, 42);
+            this.txtDemandanteSegundoNombre.Name = "txtDemandanteSegundoNombre";
+            this.txtDemandanteSegundoNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtDemandanteSegundoNombre.TabIndex = 5;
+            // 
+            // txtDemandanteNombre
+            // 
+            this.txtDemandanteNombre.Location = new System.Drawing.Point(102, 16);
+            this.txtDemandanteNombre.Name = "txtDemandanteNombre";
+            this.txtDemandanteNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtDemandanteNombre.TabIndex = 4;
             // 
             // label6
             // 
@@ -152,34 +180,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "No. Divorcio";
             // 
-            // txtDemandanteNombre
-            // 
-            this.txtDemandanteNombre.Location = new System.Drawing.Point(102, 16);
-            this.txtDemandanteNombre.Name = "txtDemandanteNombre";
-            this.txtDemandanteNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtDemandanteNombre.TabIndex = 4;
-            // 
-            // txtDemandanteSegundoNombre
-            // 
-            this.txtDemandanteSegundoNombre.Location = new System.Drawing.Point(102, 42);
-            this.txtDemandanteSegundoNombre.Name = "txtDemandanteSegundoNombre";
-            this.txtDemandanteSegundoNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtDemandanteSegundoNombre.TabIndex = 5;
-            // 
-            // txtDemandanteApellido
-            // 
-            this.txtDemandanteApellido.Location = new System.Drawing.Point(102, 68);
-            this.txtDemandanteApellido.Name = "txtDemandanteApellido";
-            this.txtDemandanteApellido.Size = new System.Drawing.Size(100, 20);
-            this.txtDemandanteApellido.TabIndex = 6;
-            // 
-            // txtDemandanteSegundoApellido
-            // 
-            this.txtDemandanteSegundoApellido.Location = new System.Drawing.Point(102, 94);
-            this.txtDemandanteSegundoApellido.Name = "txtDemandanteSegundoApellido";
-            this.txtDemandanteSegundoApellido.Size = new System.Drawing.Size(100, 20);
-            this.txtDemandanteSegundoApellido.TabIndex = 7;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtDemandadoSegundoApellido);
@@ -195,7 +195,7 @@
             this.groupBox2.Size = new System.Drawing.Size(214, 140);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Demandante";
+            this.groupBox2.Text = "Demandado";
             // 
             // txtDemandadoSegundoApellido
             // 
@@ -331,7 +331,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 436);
+            this.ClientSize = new System.Drawing.Size(466, 436);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnGuardar);
