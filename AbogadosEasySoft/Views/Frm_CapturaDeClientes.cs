@@ -99,6 +99,7 @@ namespace AbogadosEasySoft.Views
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
+            //se busca si la cédula o pasapporte ya están en la base de datos
             if (MskNoCedula.MaskFull)
                 TxtNoCedula.Text = MskNoCedula.Text.Replace("-","");
             else if (!string.IsNullOrEmpty(txtPasaporte.Text))
@@ -217,6 +218,7 @@ namespace AbogadosEasySoft.Views
         #endregion
     }
 
+    //Se le agrega una erxtensión a los string que los devuelve null si están vacíos
     public static class Extensions
     {
         public static string NullIfWhiteSpace(this string value)
