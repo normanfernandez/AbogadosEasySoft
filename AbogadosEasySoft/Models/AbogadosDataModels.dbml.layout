@@ -1,18 +1,91 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AbogadosDataModels">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.875, 15.25" name="AbogadosDataModels">
   <DataContextMoniker Name="/AbogadosDataModelsDataContext" />
   <nestedChildShapes>
-    <classShape Id="7b55960f-12e6-480f-862d-c842afb4a7b6" absoluteBounds="1.5, 1.125, 2, 1.7708968098958331">
+    <classShape Id="7b55960f-12e6-480f-862d-c842afb4a7b6" absoluteBounds="2.625, 2.25, 2, 1.7708968098958331">
       <DataClassMoniker Name="/AbogadosDataModelsDataContext/user" />
       <nestedChildShapes>
-        <elementListCompartment Id="3fcab2af-db86-4d42-96ee-f8087beb1140" absoluteBounds="1.5150000000000001, 1.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3fcab2af-db86-4d42-96ee-f8087beb1140" absoluteBounds="2.64, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ea2a2620-7e73-4f81-b683-a35a90b57c65" absoluteBounds="3.875, 1.625, 2, 5.6169254557291657">
+    <classShape Id="ce69fc89-9d34-43b4-8deb-0466cc7eeb7a" absoluteBounds="10.625, 5.125, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/AbogadosDataModelsDataContext/alquiler" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e33158dc-7b9a-4756-bfa5-aed36b4eeed6" absoluteBounds="10.64, 5.5850000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ae13653-9e38-4c80-9fd1-aafa26fa3474" absoluteBounds="2.625, 9.375, 2, 5.6169254557291666">
       <DataClassMoniker Name="/AbogadosDataModelsDataContext/cliente" />
       <nestedChildShapes>
-        <elementListCompartment Id="fecf08f8-8bf4-4839-bd9f-f531b477df22" absoluteBounds="3.89, 2.085, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="86e4adf2-2ca7-4456-9adc-72d5ed45c7f7" absoluteBounds="2.6400000000000006, 9.835, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="4459ad47-f3dc-4c0b-88c1-19fba0f543ac" absoluteBounds="5.875, 9.5, 2, 2.1554996744791675">
+      <DataClassMoniker Name="/AbogadosDataModelsDataContext/compra" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a0bd151-7447-46a4-a1c2-6b2c97c0f78e" absoluteBounds="5.8900000000000006, 9.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cae39179-9fa2-4e0f-9a51-45790c5f2076" absoluteBounds="2.625, 4.5, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/AbogadosDataModelsDataContext/tercero" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a35f002-1814-4208-b5e3-39610024fb33" absoluteBounds="2.64, 4.96, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.625 : 14.1963118489583); (11.71875 : 14.1963118489583); (11.71875 : 8.04970540364583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AbogadosDataModelsDataContext/cliente/cliente_alquiler" />
+      <nodes>
+        <classShapeMoniker Id="8ae13653-9e38-4c80-9fd1-aafa26fa3474" />
+        <classShapeMoniker Id="ce69fc89-9d34-43b4-8deb-0466cc7eeb7a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 10.5777498372396); (5.875 : 10.5777498372396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AbogadosDataModelsDataContext/cliente/cliente_compra" />
+      <nodes>
+        <classShapeMoniker Id="8ae13653-9e38-4c80-9fd1-aafa26fa3474" />
+        <classShapeMoniker Id="4459ad47-f3dc-4c0b-88c1-19fba0f543ac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 6.58735270182292); (10.625 : 6.58735270182292)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AbogadosDataModelsDataContext/tercero/tercero_alquiler" />
+      <nodes>
+        <classShapeMoniker Id="cae39179-9fa2-4e0f-9a51-45790c5f2076" />
+        <classShapeMoniker Id="ce69fc89-9d34-43b4-8deb-0466cc7eeb7a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 5.79367635091146); (10.625 : 5.79367635091146)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AbogadosDataModelsDataContext/tercero/tercero_alquiler1" />
+      <nodes>
+        <classShapeMoniker Id="cae39179-9fa2-4e0f-9a51-45790c5f2076" />
+        <classShapeMoniker Id="ce69fc89-9d34-43b4-8deb-0466cc7eeb7a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 7.61058227539062); (6.875 : 7.61058227539062); (6.875 : 9.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AbogadosDataModelsDataContext/tercero/tercero_compra" />
+      <nodes>
+        <classShapeMoniker Id="cae39179-9fa2-4e0f-9a51-45790c5f2076" />
+        <classShapeMoniker Id="4459ad47-f3dc-4c0b-88c1-19fba0f543ac" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ef1560d0-1926-4f45-8185-b8d1c4ae64b7" absoluteBounds="8.75, 11.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/AbogadosDataModelsDataContext/divorcio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94c9b9e5-5450-4aad-b1aa-edd1f3015a30" absoluteBounds="8.765, 11.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.625 : 12.5280989583333); (8.75 : 12.5280989583333)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AbogadosDataModelsDataContext/cliente/cliente_divorcio" />
+      <nodes>
+        <classShapeMoniker Id="8ae13653-9e38-4c80-9fd1-aafa26fa3474" />
+        <classShapeMoniker Id="ef1560d0-1926-4f45-8185-b8d1c4ae64b7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 8.63381184895833); (6.79166666666667 : 8.63381184895833 : JumpStart); (6.95833333333333 : 8.63381184895833 : JumpEnd); (9.65625 : 8.63381184895833); (9.65625 : 11.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AbogadosDataModelsDataContext/tercero/tercero_divorcio" />
+      <nodes>
+        <classShapeMoniker Id="cae39179-9fa2-4e0f-9a51-45790c5f2076" />
+        <classShapeMoniker Id="ef1560d0-1926-4f45-8185-b8d1c4ae64b7" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

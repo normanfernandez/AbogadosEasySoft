@@ -33,9 +33,21 @@ namespace AbogadosEasySoft.Models
     partial void Insertuser(user instance);
     partial void Updateuser(user instance);
     partial void Deleteuser(user instance);
+    partial void Insertalquiler(alquiler instance);
+    partial void Updatealquiler(alquiler instance);
+    partial void Deletealquiler(alquiler instance);
     partial void Insertcliente(cliente instance);
     partial void Updatecliente(cliente instance);
     partial void Deletecliente(cliente instance);
+    partial void Insertcompra(compra instance);
+    partial void Updatecompra(compra instance);
+    partial void Deletecompra(compra instance);
+    partial void Inserttercero(tercero instance);
+    partial void Updatetercero(tercero instance);
+    partial void Deletetercero(tercero instance);
+    partial void Insertdivorcio(divorcio instance);
+    partial void Updatedivorcio(divorcio instance);
+    partial void Deletedivorcio(divorcio instance);
     #endregion
 		
 		public AbogadosDataModelsDataContext() : 
@@ -76,11 +88,43 @@ namespace AbogadosEasySoft.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<alquiler> alquilers
+		{
+			get
+			{
+				return this.GetTable<alquiler>();
+			}
+		}
+		
 		public System.Data.Linq.Table<cliente> clientes
 		{
 			get
 			{
 				return this.GetTable<cliente>();
+			}
+		}
+		
+		public System.Data.Linq.Table<compra> compras
+		{
+			get
+			{
+				return this.GetTable<compra>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tercero> terceros
+		{
+			get
+			{
+				return this.GetTable<tercero>();
+			}
+		}
+		
+		public System.Data.Linq.Table<divorcio> divorcios
+		{
+			get
+			{
+				return this.GetTable<divorcio>();
 			}
 		}
 	}
@@ -243,6 +287,431 @@ namespace AbogadosEasySoft.Models
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.alquiler")]
+	public partial class alquiler : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _ciudad;
+		
+		private string _mobilaria;
+		
+		private string _descripcion;
+		
+		private decimal _precio;
+		
+		private int _propietario_id;
+		
+		private int _inquilino_id;
+		
+		private int _gerente_id;
+		
+		private decimal _cantidad_deposito;
+		
+		private decimal _comision_inicial;
+		
+		private decimal _comision_mensual;
+		
+		private EntityRef<cliente> _cliente;
+		
+		private EntityRef<tercero> _tercero;
+		
+		private EntityRef<tercero> _tercero1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnciudadChanging(string value);
+    partial void OnciudadChanged();
+    partial void OnmobilariaChanging(string value);
+    partial void OnmobilariaChanged();
+    partial void OndescripcionChanging(string value);
+    partial void OndescripcionChanged();
+    partial void OnprecioChanging(decimal value);
+    partial void OnprecioChanged();
+    partial void Onpropietario_idChanging(int value);
+    partial void Onpropietario_idChanged();
+    partial void Oninquilino_idChanging(int value);
+    partial void Oninquilino_idChanged();
+    partial void Ongerente_idChanging(int value);
+    partial void Ongerente_idChanged();
+    partial void Oncantidad_depositoChanging(decimal value);
+    partial void Oncantidad_depositoChanged();
+    partial void Oncomision_inicialChanging(decimal value);
+    partial void Oncomision_inicialChanged();
+    partial void Oncomision_mensualChanging(decimal value);
+    partial void Oncomision_mensualChanged();
+    #endregion
+		
+		public alquiler()
+		{
+			this._cliente = default(EntityRef<cliente>);
+			this._tercero = default(EntityRef<tercero>);
+			this._tercero1 = default(EntityRef<tercero>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ciudad", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string ciudad
+		{
+			get
+			{
+				return this._ciudad;
+			}
+			set
+			{
+				if ((this._ciudad != value))
+				{
+					this.OnciudadChanging(value);
+					this.SendPropertyChanging();
+					this._ciudad = value;
+					this.SendPropertyChanged("ciudad");
+					this.OnciudadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mobilaria", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string mobilaria
+		{
+			get
+			{
+				return this._mobilaria;
+			}
+			set
+			{
+				if ((this._mobilaria != value))
+				{
+					this.OnmobilariaChanging(value);
+					this.SendPropertyChanging();
+					this._mobilaria = value;
+					this.SendPropertyChanged("mobilaria");
+					this.OnmobilariaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="NVarChar(50)")]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this.OndescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._descripcion = value;
+					this.SendPropertyChanged("descripcion");
+					this.OndescripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio", DbType="Money NOT NULL")]
+		public decimal precio
+		{
+			get
+			{
+				return this._precio;
+			}
+			set
+			{
+				if ((this._precio != value))
+				{
+					this.OnprecioChanging(value);
+					this.SendPropertyChanging();
+					this._precio = value;
+					this.SendPropertyChanged("precio");
+					this.OnprecioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_propietario_id", DbType="Int NOT NULL")]
+		public int propietario_id
+		{
+			get
+			{
+				return this._propietario_id;
+			}
+			set
+			{
+				if ((this._propietario_id != value))
+				{
+					if (this._cliente.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onpropietario_idChanging(value);
+					this.SendPropertyChanging();
+					this._propietario_id = value;
+					this.SendPropertyChanged("propietario_id");
+					this.Onpropietario_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inquilino_id", DbType="Int NOT NULL")]
+		public int inquilino_id
+		{
+			get
+			{
+				return this._inquilino_id;
+			}
+			set
+			{
+				if ((this._inquilino_id != value))
+				{
+					if (this._tercero1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Oninquilino_idChanging(value);
+					this.SendPropertyChanging();
+					this._inquilino_id = value;
+					this.SendPropertyChanged("inquilino_id");
+					this.Oninquilino_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gerente_id", DbType="Int NOT NULL")]
+		public int gerente_id
+		{
+			get
+			{
+				return this._gerente_id;
+			}
+			set
+			{
+				if ((this._gerente_id != value))
+				{
+					if (this._tercero.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Ongerente_idChanging(value);
+					this.SendPropertyChanging();
+					this._gerente_id = value;
+					this.SendPropertyChanged("gerente_id");
+					this.Ongerente_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidad_deposito", DbType="Money NOT NULL")]
+		public decimal cantidad_deposito
+		{
+			get
+			{
+				return this._cantidad_deposito;
+			}
+			set
+			{
+				if ((this._cantidad_deposito != value))
+				{
+					this.Oncantidad_depositoChanging(value);
+					this.SendPropertyChanging();
+					this._cantidad_deposito = value;
+					this.SendPropertyChanged("cantidad_deposito");
+					this.Oncantidad_depositoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comision_inicial", DbType="Money NOT NULL")]
+		public decimal comision_inicial
+		{
+			get
+			{
+				return this._comision_inicial;
+			}
+			set
+			{
+				if ((this._comision_inicial != value))
+				{
+					this.Oncomision_inicialChanging(value);
+					this.SendPropertyChanging();
+					this._comision_inicial = value;
+					this.SendPropertyChanged("comision_inicial");
+					this.Oncomision_inicialChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comision_mensual", DbType="Money NOT NULL")]
+		public decimal comision_mensual
+		{
+			get
+			{
+				return this._comision_mensual;
+			}
+			set
+			{
+				if ((this._comision_mensual != value))
+				{
+					this.Oncomision_mensualChanging(value);
+					this.SendPropertyChanging();
+					this._comision_mensual = value;
+					this.SendPropertyChanged("comision_mensual");
+					this.Oncomision_mensualChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cliente_alquiler", Storage="_cliente", ThisKey="propietario_id", OtherKey="id", IsForeignKey=true)]
+		public cliente cliente
+		{
+			get
+			{
+				return this._cliente.Entity;
+			}
+			set
+			{
+				cliente previousValue = this._cliente.Entity;
+				if (((previousValue != value) 
+							|| (this._cliente.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._cliente.Entity = null;
+						previousValue.alquilers.Remove(this);
+					}
+					this._cliente.Entity = value;
+					if ((value != null))
+					{
+						value.alquilers.Add(this);
+						this._propietario_id = value.id;
+					}
+					else
+					{
+						this._propietario_id = default(int);
+					}
+					this.SendPropertyChanged("cliente");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tercero_alquiler", Storage="_tercero", ThisKey="gerente_id", OtherKey="id", IsForeignKey=true)]
+		public tercero tercero
+		{
+			get
+			{
+				return this._tercero.Entity;
+			}
+			set
+			{
+				tercero previousValue = this._tercero.Entity;
+				if (((previousValue != value) 
+							|| (this._tercero.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tercero.Entity = null;
+						previousValue.alquilers.Remove(this);
+					}
+					this._tercero.Entity = value;
+					if ((value != null))
+					{
+						value.alquilers.Add(this);
+						this._gerente_id = value.id;
+					}
+					else
+					{
+						this._gerente_id = default(int);
+					}
+					this.SendPropertyChanged("tercero");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tercero_alquiler1", Storage="_tercero1", ThisKey="inquilino_id", OtherKey="id", IsForeignKey=true)]
+		public tercero tercero1
+		{
+			get
+			{
+				return this._tercero1.Entity;
+			}
+			set
+			{
+				tercero previousValue = this._tercero1.Entity;
+				if (((previousValue != value) 
+							|| (this._tercero1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tercero1.Entity = null;
+						previousValue.alquilers1.Remove(this);
+					}
+					this._tercero1.Entity = value;
+					if ((value != null))
+					{
+						value.alquilers1.Add(this);
+						this._inquilino_id = value.id;
+					}
+					else
+					{
+						this._inquilino_id = default(int);
+					}
+					this.SendPropertyChanged("tercero1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.clientes")]
 	public partial class cliente : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -298,6 +767,12 @@ namespace AbogadosEasySoft.Models
 		private string _notas;
 		
 		private System.DateTime _fecha_actual;
+		
+		private EntitySet<alquiler> _alquilers;
+		
+		private EntitySet<compra> _compras;
+		
+		private EntitySet<divorcio> _divorcios;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -357,6 +832,9 @@ namespace AbogadosEasySoft.Models
 		
 		public cliente()
 		{
+			this._alquilers = new EntitySet<alquiler>(new Action<alquiler>(this.attach_alquilers), new Action<alquiler>(this.detach_alquilers));
+			this._compras = new EntitySet<compra>(new Action<compra>(this.attach_compras), new Action<compra>(this.detach_compras));
+			this._divorcios = new EntitySet<divorcio>(new Action<divorcio>(this.attach_divorcios), new Action<divorcio>(this.detach_divorcios));
 			OnCreated();
 		}
 		
@@ -856,6 +1334,1263 @@ namespace AbogadosEasySoft.Models
 					this._fecha_actual = value;
 					this.SendPropertyChanged("fecha_actual");
 					this.Onfecha_actualChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cliente_alquiler", Storage="_alquilers", ThisKey="id", OtherKey="propietario_id")]
+		public EntitySet<alquiler> alquilers
+		{
+			get
+			{
+				return this._alquilers;
+			}
+			set
+			{
+				this._alquilers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cliente_compra", Storage="_compras", ThisKey="id", OtherKey="comprador_id")]
+		public EntitySet<compra> compras
+		{
+			get
+			{
+				return this._compras;
+			}
+			set
+			{
+				this._compras.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cliente_divorcio", Storage="_divorcios", ThisKey="id", OtherKey="demandante_id")]
+		public EntitySet<divorcio> divorcios
+		{
+			get
+			{
+				return this._divorcios;
+			}
+			set
+			{
+				this._divorcios.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_alquilers(alquiler entity)
+		{
+			this.SendPropertyChanging();
+			entity.cliente = this;
+		}
+		
+		private void detach_alquilers(alquiler entity)
+		{
+			this.SendPropertyChanging();
+			entity.cliente = null;
+		}
+		
+		private void attach_compras(compra entity)
+		{
+			this.SendPropertyChanging();
+			entity.cliente = this;
+		}
+		
+		private void detach_compras(compra entity)
+		{
+			this.SendPropertyChanging();
+			entity.cliente = null;
+		}
+		
+		private void attach_divorcios(divorcio entity)
+		{
+			this.SendPropertyChanging();
+			entity.cliente = this;
+		}
+		
+		private void detach_divorcios(divorcio entity)
+		{
+			this.SendPropertyChanging();
+			entity.cliente = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.compras")]
+	public partial class compra : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _ciudad;
+		
+		private int _comprador_id;
+		
+		private int _vendedor_id;
+		
+		private string _tipo_mobilaria;
+		
+		private string _descripcion;
+		
+		private decimal _precio;
+		
+		private EntityRef<cliente> _cliente;
+		
+		private EntityRef<tercero> _tercero;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnciudadChanging(string value);
+    partial void OnciudadChanged();
+    partial void Oncomprador_idChanging(int value);
+    partial void Oncomprador_idChanged();
+    partial void Onvendedor_idChanging(int value);
+    partial void Onvendedor_idChanged();
+    partial void Ontipo_mobilariaChanging(string value);
+    partial void Ontipo_mobilariaChanged();
+    partial void OndescripcionChanging(string value);
+    partial void OndescripcionChanged();
+    partial void OnprecioChanging(decimal value);
+    partial void OnprecioChanged();
+    #endregion
+		
+		public compra()
+		{
+			this._cliente = default(EntityRef<cliente>);
+			this._tercero = default(EntityRef<tercero>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ciudad", DbType="NChar(10)")]
+		public string ciudad
+		{
+			get
+			{
+				return this._ciudad;
+			}
+			set
+			{
+				if ((this._ciudad != value))
+				{
+					this.OnciudadChanging(value);
+					this.SendPropertyChanging();
+					this._ciudad = value;
+					this.SendPropertyChanged("ciudad");
+					this.OnciudadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comprador_id", DbType="Int NOT NULL")]
+		public int comprador_id
+		{
+			get
+			{
+				return this._comprador_id;
+			}
+			set
+			{
+				if ((this._comprador_id != value))
+				{
+					if (this._cliente.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Oncomprador_idChanging(value);
+					this.SendPropertyChanging();
+					this._comprador_id = value;
+					this.SendPropertyChanged("comprador_id");
+					this.Oncomprador_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendedor_id", DbType="Int NOT NULL")]
+		public int vendedor_id
+		{
+			get
+			{
+				return this._vendedor_id;
+			}
+			set
+			{
+				if ((this._vendedor_id != value))
+				{
+					if (this._tercero.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onvendedor_idChanging(value);
+					this.SendPropertyChanging();
+					this._vendedor_id = value;
+					this.SendPropertyChanged("vendedor_id");
+					this.Onvendedor_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipo_mobilaria", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string tipo_mobilaria
+		{
+			get
+			{
+				return this._tipo_mobilaria;
+			}
+			set
+			{
+				if ((this._tipo_mobilaria != value))
+				{
+					this.Ontipo_mobilariaChanging(value);
+					this.SendPropertyChanging();
+					this._tipo_mobilaria = value;
+					this.SendPropertyChanged("tipo_mobilaria");
+					this.Ontipo_mobilariaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="NVarChar(50)")]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this.OndescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._descripcion = value;
+					this.SendPropertyChanged("descripcion");
+					this.OndescripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio", DbType="Money NOT NULL")]
+		public decimal precio
+		{
+			get
+			{
+				return this._precio;
+			}
+			set
+			{
+				if ((this._precio != value))
+				{
+					this.OnprecioChanging(value);
+					this.SendPropertyChanging();
+					this._precio = value;
+					this.SendPropertyChanged("precio");
+					this.OnprecioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cliente_compra", Storage="_cliente", ThisKey="comprador_id", OtherKey="id", IsForeignKey=true)]
+		public cliente cliente
+		{
+			get
+			{
+				return this._cliente.Entity;
+			}
+			set
+			{
+				cliente previousValue = this._cliente.Entity;
+				if (((previousValue != value) 
+							|| (this._cliente.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._cliente.Entity = null;
+						previousValue.compras.Remove(this);
+					}
+					this._cliente.Entity = value;
+					if ((value != null))
+					{
+						value.compras.Add(this);
+						this._comprador_id = value.id;
+					}
+					else
+					{
+						this._comprador_id = default(int);
+					}
+					this.SendPropertyChanged("cliente");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tercero_compra", Storage="_tercero", ThisKey="vendedor_id", OtherKey="id", IsForeignKey=true)]
+		public tercero tercero
+		{
+			get
+			{
+				return this._tercero.Entity;
+			}
+			set
+			{
+				tercero previousValue = this._tercero.Entity;
+				if (((previousValue != value) 
+							|| (this._tercero.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tercero.Entity = null;
+						previousValue.compras.Remove(this);
+					}
+					this._tercero.Entity = value;
+					if ((value != null))
+					{
+						value.compras.Add(this);
+						this._vendedor_id = value.id;
+					}
+					else
+					{
+						this._vendedor_id = default(int);
+					}
+					this.SendPropertyChanged("tercero");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.terceros")]
+	public partial class tercero : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Data.Linq.Binary _img;
+		
+		private string _cedula;
+		
+		private string _pasaporte;
+		
+		private string _nombre;
+		
+		private string _segundo_nombre;
+		
+		private string _apellido;
+		
+		private string _segundo_apellido;
+		
+		private string _email;
+		
+		private string _contacto;
+		
+		private string _direccion;
+		
+		private string _provincia;
+		
+		private string _municipio;
+		
+		private string _telefono;
+		
+		private string _celular;
+		
+		private string _estado_civil;
+		
+		private string _empleado;
+		
+		private string _direccion_empleo;
+		
+		private string _notas;
+		
+		private System.DateTime _fecha_actual;
+		
+		private EntitySet<alquiler> _alquilers;
+		
+		private EntitySet<alquiler> _alquilers1;
+		
+		private EntitySet<compra> _compras;
+		
+		private EntitySet<divorcio> _divorcios;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnimgChanging(System.Data.Linq.Binary value);
+    partial void OnimgChanged();
+    partial void OncedulaChanging(string value);
+    partial void OncedulaChanged();
+    partial void OnpasaporteChanging(string value);
+    partial void OnpasaporteChanged();
+    partial void OnnombreChanging(string value);
+    partial void OnnombreChanged();
+    partial void Onsegundo_nombreChanging(string value);
+    partial void Onsegundo_nombreChanged();
+    partial void OnapellidoChanging(string value);
+    partial void OnapellidoChanged();
+    partial void Onsegundo_apellidoChanging(string value);
+    partial void Onsegundo_apellidoChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OncontactoChanging(string value);
+    partial void OncontactoChanged();
+    partial void OndireccionChanging(string value);
+    partial void OndireccionChanged();
+    partial void OnprovinciaChanging(string value);
+    partial void OnprovinciaChanged();
+    partial void OnmunicipioChanging(string value);
+    partial void OnmunicipioChanged();
+    partial void OntelefonoChanging(string value);
+    partial void OntelefonoChanged();
+    partial void OncelularChanging(string value);
+    partial void OncelularChanged();
+    partial void Onestado_civilChanging(string value);
+    partial void Onestado_civilChanged();
+    partial void OnempleadoChanging(string value);
+    partial void OnempleadoChanged();
+    partial void Ondireccion_empleoChanging(string value);
+    partial void Ondireccion_empleoChanged();
+    partial void OnnotasChanging(string value);
+    partial void OnnotasChanged();
+    partial void Onfecha_actualChanging(System.DateTime value);
+    partial void Onfecha_actualChanged();
+    #endregion
+		
+		public tercero()
+		{
+			this._alquilers = new EntitySet<alquiler>(new Action<alquiler>(this.attach_alquilers), new Action<alquiler>(this.detach_alquilers));
+			this._alquilers1 = new EntitySet<alquiler>(new Action<alquiler>(this.attach_alquilers1), new Action<alquiler>(this.detach_alquilers1));
+			this._compras = new EntitySet<compra>(new Action<compra>(this.attach_compras), new Action<compra>(this.detach_compras));
+			this._divorcios = new EntitySet<divorcio>(new Action<divorcio>(this.attach_divorcios), new Action<divorcio>(this.detach_divorcios));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_img", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary img
+		{
+			get
+			{
+				return this._img;
+			}
+			set
+			{
+				if ((this._img != value))
+				{
+					this.OnimgChanging(value);
+					this.SendPropertyChanging();
+					this._img = value;
+					this.SendPropertyChanged("img");
+					this.OnimgChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cedula", DbType="NChar(11)")]
+		public string cedula
+		{
+			get
+			{
+				return this._cedula;
+			}
+			set
+			{
+				if ((this._cedula != value))
+				{
+					this.OncedulaChanging(value);
+					this.SendPropertyChanging();
+					this._cedula = value;
+					this.SendPropertyChanged("cedula");
+					this.OncedulaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pasaporte", DbType="NChar(20)")]
+		public string pasaporte
+		{
+			get
+			{
+				return this._pasaporte;
+			}
+			set
+			{
+				if ((this._pasaporte != value))
+				{
+					this.OnpasaporteChanging(value);
+					this.SendPropertyChanging();
+					this._pasaporte = value;
+					this.SendPropertyChanged("pasaporte");
+					this.OnpasaporteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre", DbType="NVarChar(15) NOT NULL", CanBeNull=false)]
+		public string nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				if ((this._nombre != value))
+				{
+					this.OnnombreChanging(value);
+					this.SendPropertyChanging();
+					this._nombre = value;
+					this.SendPropertyChanged("nombre");
+					this.OnnombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_segundo_nombre", DbType="NVarChar(15)")]
+		public string segundo_nombre
+		{
+			get
+			{
+				return this._segundo_nombre;
+			}
+			set
+			{
+				if ((this._segundo_nombre != value))
+				{
+					this.Onsegundo_nombreChanging(value);
+					this.SendPropertyChanging();
+					this._segundo_nombre = value;
+					this.SendPropertyChanged("segundo_nombre");
+					this.Onsegundo_nombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_apellido", DbType="NVarChar(15) NOT NULL", CanBeNull=false)]
+		public string apellido
+		{
+			get
+			{
+				return this._apellido;
+			}
+			set
+			{
+				if ((this._apellido != value))
+				{
+					this.OnapellidoChanging(value);
+					this.SendPropertyChanging();
+					this._apellido = value;
+					this.SendPropertyChanged("apellido");
+					this.OnapellidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_segundo_apellido", DbType="NVarChar(15)")]
+		public string segundo_apellido
+		{
+			get
+			{
+				return this._segundo_apellido;
+			}
+			set
+			{
+				if ((this._segundo_apellido != value))
+				{
+					this.Onsegundo_apellidoChanging(value);
+					this.SendPropertyChanging();
+					this._segundo_apellido = value;
+					this.SendPropertyChanged("segundo_apellido");
+					this.Onsegundo_apellidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(50)")]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
+					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contacto", DbType="VarChar(50)")]
+		public string contacto
+		{
+			get
+			{
+				return this._contacto;
+			}
+			set
+			{
+				if ((this._contacto != value))
+				{
+					this.OncontactoChanging(value);
+					this.SendPropertyChanging();
+					this._contacto = value;
+					this.SendPropertyChanged("contacto");
+					this.OncontactoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string direccion
+		{
+			get
+			{
+				return this._direccion;
+			}
+			set
+			{
+				if ((this._direccion != value))
+				{
+					this.OndireccionChanging(value);
+					this.SendPropertyChanging();
+					this._direccion = value;
+					this.SendPropertyChanged("direccion");
+					this.OndireccionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_provincia", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string provincia
+		{
+			get
+			{
+				return this._provincia;
+			}
+			set
+			{
+				if ((this._provincia != value))
+				{
+					this.OnprovinciaChanging(value);
+					this.SendPropertyChanging();
+					this._provincia = value;
+					this.SendPropertyChanged("provincia");
+					this.OnprovinciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_municipio", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string municipio
+		{
+			get
+			{
+				return this._municipio;
+			}
+			set
+			{
+				if ((this._municipio != value))
+				{
+					this.OnmunicipioChanging(value);
+					this.SendPropertyChanging();
+					this._municipio = value;
+					this.SendPropertyChanged("municipio");
+					this.OnmunicipioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefono", DbType="NChar(10)")]
+		public string telefono
+		{
+			get
+			{
+				return this._telefono;
+			}
+			set
+			{
+				if ((this._telefono != value))
+				{
+					this.OntelefonoChanging(value);
+					this.SendPropertyChanging();
+					this._telefono = value;
+					this.SendPropertyChanged("telefono");
+					this.OntelefonoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_celular", DbType="NChar(10)")]
+		public string celular
+		{
+			get
+			{
+				return this._celular;
+			}
+			set
+			{
+				if ((this._celular != value))
+				{
+					this.OncelularChanging(value);
+					this.SendPropertyChanging();
+					this._celular = value;
+					this.SendPropertyChanged("celular");
+					this.OncelularChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado_civil", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string estado_civil
+		{
+			get
+			{
+				return this._estado_civil;
+			}
+			set
+			{
+				if ((this._estado_civil != value))
+				{
+					this.Onestado_civilChanging(value);
+					this.SendPropertyChanging();
+					this._estado_civil = value;
+					this.SendPropertyChanged("estado_civil");
+					this.Onestado_civilChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_empleado", DbType="VarChar(50)")]
+		public string empleado
+		{
+			get
+			{
+				return this._empleado;
+			}
+			set
+			{
+				if ((this._empleado != value))
+				{
+					this.OnempleadoChanging(value);
+					this.SendPropertyChanging();
+					this._empleado = value;
+					this.SendPropertyChanged("empleado");
+					this.OnempleadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion_empleo", DbType="VarChar(50)")]
+		public string direccion_empleo
+		{
+			get
+			{
+				return this._direccion_empleo;
+			}
+			set
+			{
+				if ((this._direccion_empleo != value))
+				{
+					this.Ondireccion_empleoChanging(value);
+					this.SendPropertyChanging();
+					this._direccion_empleo = value;
+					this.SendPropertyChanged("direccion_empleo");
+					this.Ondireccion_empleoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_notas", DbType="VarChar(50)")]
+		public string notas
+		{
+			get
+			{
+				return this._notas;
+			}
+			set
+			{
+				if ((this._notas != value))
+				{
+					this.OnnotasChanging(value);
+					this.SendPropertyChanging();
+					this._notas = value;
+					this.SendPropertyChanged("notas");
+					this.OnnotasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_actual", DbType="Date NOT NULL")]
+		public System.DateTime fecha_actual
+		{
+			get
+			{
+				return this._fecha_actual;
+			}
+			set
+			{
+				if ((this._fecha_actual != value))
+				{
+					this.Onfecha_actualChanging(value);
+					this.SendPropertyChanging();
+					this._fecha_actual = value;
+					this.SendPropertyChanged("fecha_actual");
+					this.Onfecha_actualChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tercero_alquiler", Storage="_alquilers", ThisKey="id", OtherKey="gerente_id")]
+		public EntitySet<alquiler> alquilers
+		{
+			get
+			{
+				return this._alquilers;
+			}
+			set
+			{
+				this._alquilers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tercero_alquiler1", Storage="_alquilers1", ThisKey="id", OtherKey="inquilino_id")]
+		public EntitySet<alquiler> alquilers1
+		{
+			get
+			{
+				return this._alquilers1;
+			}
+			set
+			{
+				this._alquilers1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tercero_compra", Storage="_compras", ThisKey="id", OtherKey="vendedor_id")]
+		public EntitySet<compra> compras
+		{
+			get
+			{
+				return this._compras;
+			}
+			set
+			{
+				this._compras.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tercero_divorcio", Storage="_divorcios", ThisKey="id", OtherKey="demandado_id")]
+		public EntitySet<divorcio> divorcios
+		{
+			get
+			{
+				return this._divorcios;
+			}
+			set
+			{
+				this._divorcios.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_alquilers(alquiler entity)
+		{
+			this.SendPropertyChanging();
+			entity.tercero = this;
+		}
+		
+		private void detach_alquilers(alquiler entity)
+		{
+			this.SendPropertyChanging();
+			entity.tercero = null;
+		}
+		
+		private void attach_alquilers1(alquiler entity)
+		{
+			this.SendPropertyChanging();
+			entity.tercero1 = this;
+		}
+		
+		private void detach_alquilers1(alquiler entity)
+		{
+			this.SendPropertyChanging();
+			entity.tercero1 = null;
+		}
+		
+		private void attach_compras(compra entity)
+		{
+			this.SendPropertyChanging();
+			entity.tercero = this;
+		}
+		
+		private void detach_compras(compra entity)
+		{
+			this.SendPropertyChanging();
+			entity.tercero = null;
+		}
+		
+		private void attach_divorcios(divorcio entity)
+		{
+			this.SendPropertyChanging();
+			entity.tercero = this;
+		}
+		
+		private void detach_divorcios(divorcio entity)
+		{
+			this.SendPropertyChanging();
+			entity.tercero = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.divorcios")]
+	public partial class divorcio : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _demandante_id;
+		
+		private int _demandado_id;
+		
+		private string _juez;
+		
+		private string _tipo;
+		
+		private decimal _honorarios;
+		
+		private EntityRef<cliente> _cliente;
+		
+		private EntityRef<tercero> _tercero;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Ondemandante_idChanging(int value);
+    partial void Ondemandante_idChanged();
+    partial void Ondemandado_idChanging(int value);
+    partial void Ondemandado_idChanged();
+    partial void OnjuezChanging(string value);
+    partial void OnjuezChanged();
+    partial void OntipoChanging(string value);
+    partial void OntipoChanged();
+    partial void OnhonorariosChanging(decimal value);
+    partial void OnhonorariosChanged();
+    #endregion
+		
+		public divorcio()
+		{
+			this._cliente = default(EntityRef<cliente>);
+			this._tercero = default(EntityRef<tercero>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_demandante_id", DbType="Int NOT NULL")]
+		public int demandante_id
+		{
+			get
+			{
+				return this._demandante_id;
+			}
+			set
+			{
+				if ((this._demandante_id != value))
+				{
+					if (this._cliente.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Ondemandante_idChanging(value);
+					this.SendPropertyChanging();
+					this._demandante_id = value;
+					this.SendPropertyChanged("demandante_id");
+					this.Ondemandante_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_demandado_id", DbType="Int NOT NULL")]
+		public int demandado_id
+		{
+			get
+			{
+				return this._demandado_id;
+			}
+			set
+			{
+				if ((this._demandado_id != value))
+				{
+					if (this._tercero.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Ondemandado_idChanging(value);
+					this.SendPropertyChanging();
+					this._demandado_id = value;
+					this.SendPropertyChanged("demandado_id");
+					this.Ondemandado_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_juez", DbType="NVarChar(30)")]
+		public string juez
+		{
+			get
+			{
+				return this._juez;
+			}
+			set
+			{
+				if ((this._juez != value))
+				{
+					this.OnjuezChanging(value);
+					this.SendPropertyChanging();
+					this._juez = value;
+					this.SendPropertyChanged("juez");
+					this.OnjuezChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipo", DbType="NVarChar(15) NOT NULL", CanBeNull=false)]
+		public string tipo
+		{
+			get
+			{
+				return this._tipo;
+			}
+			set
+			{
+				if ((this._tipo != value))
+				{
+					this.OntipoChanging(value);
+					this.SendPropertyChanging();
+					this._tipo = value;
+					this.SendPropertyChanged("tipo");
+					this.OntipoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_honorarios", DbType="Money NOT NULL")]
+		public decimal honorarios
+		{
+			get
+			{
+				return this._honorarios;
+			}
+			set
+			{
+				if ((this._honorarios != value))
+				{
+					this.OnhonorariosChanging(value);
+					this.SendPropertyChanging();
+					this._honorarios = value;
+					this.SendPropertyChanged("honorarios");
+					this.OnhonorariosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cliente_divorcio", Storage="_cliente", ThisKey="demandante_id", OtherKey="id", IsForeignKey=true)]
+		public cliente cliente
+		{
+			get
+			{
+				return this._cliente.Entity;
+			}
+			set
+			{
+				cliente previousValue = this._cliente.Entity;
+				if (((previousValue != value) 
+							|| (this._cliente.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._cliente.Entity = null;
+						previousValue.divorcios.Remove(this);
+					}
+					this._cliente.Entity = value;
+					if ((value != null))
+					{
+						value.divorcios.Add(this);
+						this._demandante_id = value.id;
+					}
+					else
+					{
+						this._demandante_id = default(int);
+					}
+					this.SendPropertyChanged("cliente");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tercero_divorcio", Storage="_tercero", ThisKey="demandado_id", OtherKey="id", IsForeignKey=true)]
+		public tercero tercero
+		{
+			get
+			{
+				return this._tercero.Entity;
+			}
+			set
+			{
+				tercero previousValue = this._tercero.Entity;
+				if (((previousValue != value) 
+							|| (this._tercero.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tercero.Entity = null;
+						previousValue.divorcios.Remove(this);
+					}
+					this._tercero.Entity = value;
+					if ((value != null))
+					{
+						value.divorcios.Add(this);
+						this._demandado_id = value.id;
+					}
+					else
+					{
+						this._demandado_id = default(int);
+					}
+					this.SendPropertyChanged("tercero");
 				}
 			}
 		}

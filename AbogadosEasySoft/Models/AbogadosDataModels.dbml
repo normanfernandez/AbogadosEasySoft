@@ -9,6 +9,24 @@
       <Column Name="privilege" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.alquiler" Member="alquilers">
+    <Type Name="alquiler">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ciudad" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="mobilaria" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="precio" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="propietario_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="inquilino_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gerente_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cantidad_deposito" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="comision_inicial" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="comision_mensual" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="cliente_alquiler" Member="cliente" ThisKey="propietario_id" OtherKey="id" Type="cliente" IsForeignKey="true" />
+      <Association Name="tercero_alquiler" Member="tercero" ThisKey="gerente_id" OtherKey="id" Type="tercero" IsForeignKey="true" />
+      <Association Name="tercero_alquiler1" Member="tercero1" ThisKey="inquilino_id" OtherKey="id" Type="tercero" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.clientes" Member="clientes">
     <Type Name="cliente">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -36,6 +54,62 @@
       <Column Name="procurador" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="notas" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="fecha_actual" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="cliente_alquiler" Member="alquilers" ThisKey="id" OtherKey="propietario_id" Type="alquiler" />
+      <Association Name="cliente_compra" Member="compras" ThisKey="id" OtherKey="comprador_id" Type="compra" />
+      <Association Name="cliente_divorcio" Member="divorcios" ThisKey="id" OtherKey="demandante_id" Type="divorcio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.compras" Member="compras">
+    <Type Name="compra">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ciudad" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="comprador_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vendedor_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tipo_mobilaria" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="precio" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="cliente_compra" Member="cliente" ThisKey="comprador_id" OtherKey="id" Type="cliente" IsForeignKey="true" />
+      <Association Name="tercero_compra" Member="tercero" ThisKey="vendedor_id" OtherKey="id" Type="tercero" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.terceros" Member="terceros">
+    <Type Name="tercero">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="img" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="cedula" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="pasaporte" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="segundo_nombre" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="apellido" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="segundo_apellido" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contacto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="provincia" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="municipio" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="telefono" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="celular" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="estado_civil" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="empleado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="direccion_empleo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="notas" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fecha_actual" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="tercero_alquiler" Member="alquilers" ThisKey="id" OtherKey="gerente_id" Type="alquiler" />
+      <Association Name="tercero_alquiler1" Member="alquilers1" ThisKey="id" OtherKey="inquilino_id" Type="alquiler" />
+      <Association Name="tercero_compra" Member="compras" ThisKey="id" OtherKey="vendedor_id" Type="compra" />
+      <Association Name="tercero_divorcio" Member="divorcios" ThisKey="id" OtherKey="demandado_id" Type="divorcio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.divorcios" Member="divorcios">
+    <Type Name="divorcio">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="demandante_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="demandado_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="juez" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="tipo" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="honorarios" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="cliente_divorcio" Member="cliente" ThisKey="demandante_id" OtherKey="id" Type="cliente" IsForeignKey="true" />
+      <Association Name="tercero_divorcio" Member="tercero" ThisKey="demandado_id" OtherKey="id" Type="tercero" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
