@@ -31,6 +31,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCompradorId = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.txtCompradorSegundoApellido = new System.Windows.Forms.TextBox();
             this.txtCompradorApellido = new System.Windows.Forms.TextBox();
             this.txtCompradorSegundoNombre = new System.Windows.Forms.TextBox();
@@ -40,6 +42,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtVendedorId = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.txtVendedorSegundoApellido = new System.Windows.Forms.TextBox();
             this.txtVendedorApellido = new System.Windows.Forms.TextBox();
             this.txtVendedorSegundoNombre = new System.Windows.Forms.TextBox();
@@ -62,10 +66,6 @@
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtCompradorId = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtVendedorId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -75,12 +75,14 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Enabled = false;
             this.btnGuardar.Location = new System.Drawing.Point(423, 349);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnNuevo
             // 
@@ -90,6 +92,7 @@
             this.btnNuevo.TabIndex = 16;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // groupBox1
             // 
@@ -109,6 +112,23 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Comprador";
+            // 
+            // txtCompradorId
+            // 
+            this.txtCompradorId.Location = new System.Drawing.Point(105, 29);
+            this.txtCompradorId.Name = "txtCompradorId";
+            this.txtCompradorId.Size = new System.Drawing.Size(100, 20);
+            this.txtCompradorId.TabIndex = 9;
+            this.txtCompradorId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompradorId_KeyPress);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 32);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(87, 13);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "No. identificacón";
             // 
             // txtCompradorSegundoApellido
             // 
@@ -197,6 +217,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Vendedor";
             // 
+            // txtVendedorId
+            // 
+            this.txtVendedorId.Location = new System.Drawing.Point(102, 29);
+            this.txtVendedorId.Name = "txtVendedorId";
+            this.txtVendedorId.Size = new System.Drawing.Size(100, 20);
+            this.txtVendedorId.TabIndex = 10;
+            this.txtVendedorId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVendedorId_KeyPress);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 32);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(87, 13);
+            this.label15.TabIndex = 9;
+            this.label15.Text = "No. identificacón";
+            // 
             // txtVendedorSegundoApellido
             // 
             this.txtVendedorSegundoApellido.Enabled = false;
@@ -282,6 +319,7 @@
             this.txtCompraId.Name = "txtCompraId";
             this.txtCompraId.Size = new System.Drawing.Size(116, 20);
             this.txtCompraId.TabIndex = 1;
+            this.txtCompraId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompraId_KeyPress);
             // 
             // label9
             // 
@@ -392,38 +430,6 @@
             this.label17.Size = new System.Drawing.Size(60, 13);
             this.label17.TabIndex = 23;
             this.label17.Text = "COMPRAS";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 32);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 13);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "No. identificacón";
-            // 
-            // txtCompradorId
-            // 
-            this.txtCompradorId.Location = new System.Drawing.Point(105, 29);
-            this.txtCompradorId.Name = "txtCompradorId";
-            this.txtCompradorId.Size = new System.Drawing.Size(100, 20);
-            this.txtCompradorId.TabIndex = 9;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 32);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(87, 13);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "No. identificacón";
-            // 
-            // txtVendedorId
-            // 
-            this.txtVendedorId.Location = new System.Drawing.Point(102, 29);
-            this.txtVendedorId.Name = "txtVendedorId";
-            this.txtVendedorId.Size = new System.Drawing.Size(100, 20);
-            this.txtVendedorId.TabIndex = 10;
             // 
             // Frm_Compras
             // 
