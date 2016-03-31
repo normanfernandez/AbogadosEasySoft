@@ -40,11 +40,14 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.abogadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tercerosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.divorciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alquileresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +61,7 @@
             this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1529, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1348, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -81,7 +84,10 @@
             this.demandantesToolStripMenuItem,
             this.demandadosToolStripMenuItem,
             this.abogadosAliadosToolStripMenuItem,
-            this.abogadosContrariosToolStripMenuItem});
+            this.abogadosContrariosToolStripMenuItem,
+            this.divorciosToolStripMenuItem,
+            this.alquileresToolStripMenuItem,
+            this.comprasToolStripMenuItem});
             this.capturasYConsultasToolStripMenuItem1.Name = "capturasYConsultasToolStripMenuItem1";
             this.capturasYConsultasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.capturasYConsultasToolStripMenuItem1.Text = "Capturas";
@@ -99,6 +105,7 @@
             this.tercerosToolStripMenuItem.Name = "tercerosToolStripMenuItem";
             this.tercerosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.tercerosToolStripMenuItem.Text = "Terceros";
+            this.tercerosToolStripMenuItem.Click += new System.EventHandler(this.tercerosToolStripMenuItem_Click);
             // 
             // demandantesToolStripMenuItem
             // 
@@ -134,7 +141,7 @@
             // salirToolStripMenuItem1
             // 
             this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem1.Text = "Salir";
             // 
             // consultasToolStripMenuItem
@@ -146,6 +153,25 @@
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // clientesToolStripMenuItem1
+            // 
+            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.clientesToolStripMenuItem1.Text = "Clientes";
+            this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click_1);
+            // 
+            // abogadosToolStripMenuItem
+            // 
+            this.abogadosToolStripMenuItem.Name = "abogadosToolStripMenuItem";
+            this.abogadosToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.abogadosToolStripMenuItem.Text = "Abogados";
+            // 
+            // tercerosToolStripMenuItem1
+            // 
+            this.tercerosToolStripMenuItem1.Name = "tercerosToolStripMenuItem1";
+            this.tercerosToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.tercerosToolStripMenuItem1.Text = "Terceros";
             // 
             // reportesToolStripMenuItem
             // 
@@ -164,31 +190,33 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // clientesToolStripMenuItem1
+            // divorciosToolStripMenuItem
             // 
-            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.clientesToolStripMenuItem1.Text = "Clientes";
-            this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click_1);
+            this.divorciosToolStripMenuItem.Name = "divorciosToolStripMenuItem";
+            this.divorciosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.divorciosToolStripMenuItem.Text = "Divorcios";
+            this.divorciosToolStripMenuItem.Click += new System.EventHandler(this.divorciosToolStripMenuItem_Click);
             // 
-            // abogadosToolStripMenuItem
+            // alquileresToolStripMenuItem
             // 
-            this.abogadosToolStripMenuItem.Name = "abogadosToolStripMenuItem";
-            this.abogadosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.abogadosToolStripMenuItem.Text = "Abogados";
+            this.alquileresToolStripMenuItem.Name = "alquileresToolStripMenuItem";
+            this.alquileresToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.alquileresToolStripMenuItem.Text = "Alquileres";
+            this.alquileresToolStripMenuItem.Click += new System.EventHandler(this.alquileresToolStripMenuItem_Click);
             // 
-            // tercerosToolStripMenuItem1
+            // comprasToolStripMenuItem
             // 
-            this.tercerosToolStripMenuItem1.Name = "tercerosToolStripMenuItem1";
-            this.tercerosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.tercerosToolStripMenuItem1.Text = "Terceros";
+            this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.comprasToolStripMenuItem.Text = "Compras";
+            this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
             // 
             // Frm_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1529, 828);
+            this.ClientSize = new System.Drawing.Size(1348, 733);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -223,5 +251,8 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem abogadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tercerosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem divorciosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alquileresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
     }
 }

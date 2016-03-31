@@ -52,15 +52,14 @@ namespace AbogadosEasySoft.Views
         {
             if (e.KeyChar == 13)
             {
-                Cliente = null;
-                Tercero = null;
-
                 Divorcio = DivorcioDAO.SelectSingle(d => 
                     d.id.ToString() == txtDivorcioId.Text);
 
                 if (Divorcio == null)
                 {
                     MessageBox.Show(this, "Divorcio no encontrado!");
+                    Cliente = null;
+                    Tercero = null;
                     btnGuardar.Enabled = false;
                     return;
                 }

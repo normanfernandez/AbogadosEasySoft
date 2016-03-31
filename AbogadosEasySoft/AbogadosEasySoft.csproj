@@ -74,6 +74,12 @@
     <Compile Include="Views\Frm_CapturaDeClientes.Designer.cs">
       <DependentUpon>Frm_CapturaDeClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Frm_CapturaTerceros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Frm_CapturaTerceros.Designer.cs">
+      <DependentUpon>Frm_CapturaTerceros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Frm_Compras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </Compile>
     <EmbeddedResource Include="Views\Frm_Alquiler.resx">
       <DependentUpon>Frm_Alquiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_CapturaTerceros.resx">
+      <DependentUpon>Frm_CapturaTerceros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Compras.resx">
       <DependentUpon>Frm_Compras.cs</DependentUpon>
