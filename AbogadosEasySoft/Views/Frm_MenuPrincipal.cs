@@ -54,5 +54,29 @@ namespace AbogadosEasySoft.Views
             Frm_ConsultaDeClientes pConsultarClientes = new Frm_ConsultaDeClientes();
             pConsultarClientes.ShowDialog();
         }
+
+        private void tercerosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_CapturaTerceros form = new Frm_CapturaTerceros();
+            form.ShowDialog();
+        }
+
+        private void divorciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Divorcios form = new Frm_Divorcios();
+            form.ShowDialog();
+        }
+
+        private void alquileresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Alquiler form = new Frm_Alquiler();
+            form.ShowDialog();
+        }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Compras form = new Frm_Compras();
+            form.ShowDialog();
+        }
     }
 }
