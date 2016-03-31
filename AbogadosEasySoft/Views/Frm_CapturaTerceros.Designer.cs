@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -62,7 +61,6 @@
             this.TxtEstadoCivil = new System.Windows.Forms.TextBox();
             this.TxtEmpleo = new System.Windows.Forms.TextBox();
             this.TxtDireccionEmpleo = new System.Windows.Forms.TextBox();
-            this.TxtServARealizar = new System.Windows.Forms.TextBox();
             this.TxtNotas = new System.Windows.Forms.TextBox();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
@@ -136,16 +134,6 @@
             this.label5.Size = new System.Drawing.Size(49, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Notas";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(378, 369);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(141, 16);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Servicio A Realizar";
             // 
             // label11
             // 
@@ -389,14 +377,6 @@
             this.TxtDireccionEmpleo.Size = new System.Drawing.Size(220, 20);
             this.TxtDireccionEmpleo.TabIndex = 49;
             // 
-            // TxtServARealizar
-            // 
-            this.TxtServARealizar.Enabled = false;
-            this.TxtServARealizar.Location = new System.Drawing.Point(537, 370);
-            this.TxtServARealizar.Name = "TxtServARealizar";
-            this.TxtServARealizar.Size = new System.Drawing.Size(220, 20);
-            this.TxtServARealizar.TabIndex = 50;
-            // 
             // TxtNotas
             // 
             this.TxtNotas.Enabled = false;
@@ -598,7 +578,6 @@
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtNotas);
-            this.Controls.Add(this.TxtServARealizar);
             this.Controls.Add(this.TxtDireccionEmpleo);
             this.Controls.Add(this.TxtEmpleo);
             this.Controls.Add(this.TxtEstadoCivil);
@@ -626,7 +605,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -649,7 +627,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -677,7 +654,6 @@
         private System.Windows.Forms.TextBox TxtEstadoCivil;
         private System.Windows.Forms.TextBox TxtEmpleo;
         private System.Windows.Forms.TextBox TxtDireccionEmpleo;
-        private System.Windows.Forms.TextBox TxtServARealizar;
         private System.Windows.Forms.TextBox TxtNotas;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;

@@ -24,7 +24,7 @@ namespace AbogadosEasySoft.Views
                 return;
 
             //Se guardan los datos del cliente en una variable
-            Models.cliente cliente = new Models.cliente
+            tercero Tercero = new tercero
             {
                 apellido = TxtApellido.Text,
                 cedula = TxtNoCedula.Text.NullIfWhiteSpace(),
@@ -44,10 +44,12 @@ namespace AbogadosEasySoft.Views
                 provincia = TxtProvincia.Text,
                 segundo_apellido = txtSegundoApellido.Text.NullIfWhiteSpace(),
                 segundo_nombre = txtSegundoNombre.Text.NullIfWhiteSpace(),
-                servicio = TxtServARealizar.Text,
                 telefono = TxtTelCasa.Text.NullIfWhiteSpace()
 
             };
+
+            TerceroDAO.Insert(Tercero);
+            TerceroDAO.SaveAll();
 
         }
 
@@ -82,7 +84,7 @@ namespace AbogadosEasySoft.Views
                 TextBox[] list = { TxtNombre, txtSegundoNombre,TxtApellido, txtSegundoApellido,
                     TxtApodo, TxtEmail, TxtContacto, TxtDireccion, TxtProvincia,
                     TxtMunicipio, TxtTelCasa, TxtCel,
-                    TxtEstadoCivil, TxtEmpleo, TxtDireccionEmpleo, TxtServARealizar,
+                    TxtEstadoCivil, TxtEmpleo, TxtDireccionEmpleo,
                     TxtNotas};
 
                 foreach (var t in list)
@@ -131,12 +133,6 @@ namespace AbogadosEasySoft.Views
             if (string.IsNullOrEmpty(TxtEstadoCivil.Text))
             {
                 ePvacio.SetError(this.TxtEstadoCivil, "El estado civil no puede estar vacío!");
-                validation = false;
-            }
-
-            if (string.IsNullOrEmpty(TxtServARealizar.Text))
-            {
-                ePvacio.SetError(this.TxtServARealizar, "El estado civil no puede estar vacío!");
                 validation = false;
             }
 
