@@ -32,10 +32,10 @@
             this.chbNota = new System.Windows.Forms.CheckBox();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtComisionMensual = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtComisionInicial = new System.Windows.Forms.TextBox();
-            this.txtCantidadDepósito = new System.Windows.Forms.TextBox();
+            this.txtCantidadDeposito = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -51,6 +51,8 @@
             this.txtAlquilerId = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtInquilinoId = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.txtInquilinoSegundoApellido = new System.Windows.Forms.TextBox();
             this.txtInquilinoApellido = new System.Windows.Forms.TextBox();
             this.txtInquilinoSegundoNombre = new System.Windows.Forms.TextBox();
@@ -60,6 +62,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtPropietarioId = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.txtPropietarioSegundoApellido = new System.Windows.Forms.TextBox();
             this.txtPropietarioApellido = new System.Windows.Forms.TextBox();
             this.txtPropietarioSegundoNombre = new System.Windows.Forms.TextBox();
@@ -71,6 +75,8 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.txtGerenteId = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.txtGerenteSegundoApellido = new System.Windows.Forms.TextBox();
             this.txtGerenteApelido = new System.Windows.Forms.TextBox();
             this.txtGerenteSegundoNombre = new System.Windows.Forms.TextBox();
@@ -79,12 +85,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtGerenteId = new System.Windows.Forms.TextBox();
-            this.txtPropietarioId = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtInquilinoId = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -108,14 +108,13 @@
             // chbNota
             // 
             this.chbNota.AutoSize = true;
-            this.chbNota.Checked = true;
-            this.chbNota.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbNota.Location = new System.Drawing.Point(9, 19);
             this.chbNota.Name = "chbNota";
             this.chbNota.Size = new System.Drawing.Size(89, 17);
             this.chbNota.TabIndex = 4;
             this.chbNota.Text = "Agregar Nota";
             this.chbNota.UseVisualStyleBackColor = true;
+            this.chbNota.CheckedChanged += new System.EventHandler(this.chbNota_CheckedChanged);
             // 
             // txtNota
             // 
@@ -127,10 +126,10 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Controls.Add(this.txtComisionMensual);
             this.groupBox5.Controls.Add(this.label16);
             this.groupBox5.Controls.Add(this.txtComisionInicial);
-            this.groupBox5.Controls.Add(this.txtCantidadDepósito);
+            this.groupBox5.Controls.Add(this.txtCantidadDeposito);
             this.groupBox5.Controls.Add(this.label15);
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.txtPrecio);
@@ -142,12 +141,12 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Precio de Ventas";
             // 
-            // textBox1
+            // txtComisionMensual
             // 
-            this.textBox1.Location = new System.Drawing.Point(106, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 20);
-            this.textBox1.TabIndex = 8;
+            this.txtComisionMensual.Location = new System.Drawing.Point(106, 108);
+            this.txtComisionMensual.Name = "txtComisionMensual";
+            this.txtComisionMensual.Size = new System.Drawing.Size(116, 20);
+            this.txtComisionMensual.TabIndex = 8;
             // 
             // label16
             // 
@@ -165,12 +164,12 @@
             this.txtComisionInicial.Size = new System.Drawing.Size(116, 20);
             this.txtComisionInicial.TabIndex = 6;
             // 
-            // txtCantidadDepósito
+            // txtCantidadDeposito
             // 
-            this.txtCantidadDepósito.Location = new System.Drawing.Point(106, 41);
-            this.txtCantidadDepósito.Name = "txtCantidadDepósito";
-            this.txtCantidadDepósito.Size = new System.Drawing.Size(98, 20);
-            this.txtCantidadDepósito.TabIndex = 4;
+            this.txtCantidadDeposito.Location = new System.Drawing.Point(106, 41);
+            this.txtCantidadDeposito.Name = "txtCantidadDeposito";
+            this.txtCantidadDeposito.Size = new System.Drawing.Size(98, 20);
+            this.txtCantidadDeposito.TabIndex = 4;
             // 
             // label15
             // 
@@ -289,6 +288,7 @@
             this.txtAlquilerId.Name = "txtAlquilerId";
             this.txtAlquilerId.Size = new System.Drawing.Size(116, 20);
             this.txtAlquilerId.TabIndex = 1;
+            this.txtAlquilerId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlquilerId_KeyPress);
             // 
             // label9
             // 
@@ -318,8 +318,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Parte Inquilino";
             // 
+            // txtInquilinoId
+            // 
+            this.txtInquilinoId.Location = new System.Drawing.Point(102, 20);
+            this.txtInquilinoId.Name = "txtInquilinoId";
+            this.txtInquilinoId.Size = new System.Drawing.Size(100, 20);
+            this.txtInquilinoId.TabIndex = 13;
+            this.txtInquilinoId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInquilinoId_KeyPress);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 23);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(90, 13);
+            this.label23.TabIndex = 12;
+            this.label23.Text = "No. Identificacion";
+            // 
             // txtInquilinoSegundoApellido
             // 
+            this.txtInquilinoSegundoApellido.Enabled = false;
             this.txtInquilinoSegundoApellido.Location = new System.Drawing.Point(102, 135);
             this.txtInquilinoSegundoApellido.Name = "txtInquilinoSegundoApellido";
             this.txtInquilinoSegundoApellido.Size = new System.Drawing.Size(100, 20);
@@ -327,6 +345,7 @@
             // 
             // txtInquilinoApellido
             // 
+            this.txtInquilinoApellido.Enabled = false;
             this.txtInquilinoApellido.Location = new System.Drawing.Point(102, 109);
             this.txtInquilinoApellido.Name = "txtInquilinoApellido";
             this.txtInquilinoApellido.Size = new System.Drawing.Size(100, 20);
@@ -334,6 +353,7 @@
             // 
             // txtInquilinoSegundoNombre
             // 
+            this.txtInquilinoSegundoNombre.Enabled = false;
             this.txtInquilinoSegundoNombre.Location = new System.Drawing.Point(102, 83);
             this.txtInquilinoSegundoNombre.Name = "txtInquilinoSegundoNombre";
             this.txtInquilinoSegundoNombre.Size = new System.Drawing.Size(100, 20);
@@ -341,6 +361,7 @@
             // 
             // txtInquilinoNombre
             // 
+            this.txtInquilinoNombre.Enabled = false;
             this.txtInquilinoNombre.Location = new System.Drawing.Point(102, 57);
             this.txtInquilinoNombre.Name = "txtInquilinoNombre";
             this.txtInquilinoNombre.Size = new System.Drawing.Size(100, 20);
@@ -401,8 +422,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parte Propietario";
             // 
+            // txtPropietarioId
+            // 
+            this.txtPropietarioId.Location = new System.Drawing.Point(105, 20);
+            this.txtPropietarioId.Name = "txtPropietarioId";
+            this.txtPropietarioId.Size = new System.Drawing.Size(100, 20);
+            this.txtPropietarioId.TabIndex = 11;
+            this.txtPropietarioId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPropietarioId_KeyPress);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(9, 23);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(90, 13);
+            this.label22.TabIndex = 10;
+            this.label22.Text = "No. Identificacion";
+            // 
             // txtPropietarioSegundoApellido
             // 
+            this.txtPropietarioSegundoApellido.Enabled = false;
             this.txtPropietarioSegundoApellido.Location = new System.Drawing.Point(102, 145);
             this.txtPropietarioSegundoApellido.Name = "txtPropietarioSegundoApellido";
             this.txtPropietarioSegundoApellido.Size = new System.Drawing.Size(100, 20);
@@ -410,6 +449,7 @@
             // 
             // txtPropietarioApellido
             // 
+            this.txtPropietarioApellido.Enabled = false;
             this.txtPropietarioApellido.Location = new System.Drawing.Point(102, 119);
             this.txtPropietarioApellido.Name = "txtPropietarioApellido";
             this.txtPropietarioApellido.Size = new System.Drawing.Size(100, 20);
@@ -417,6 +457,7 @@
             // 
             // txtPropietarioSegundoNombre
             // 
+            this.txtPropietarioSegundoNombre.Enabled = false;
             this.txtPropietarioSegundoNombre.Location = new System.Drawing.Point(102, 93);
             this.txtPropietarioSegundoNombre.Name = "txtPropietarioSegundoNombre";
             this.txtPropietarioSegundoNombre.Size = new System.Drawing.Size(100, 20);
@@ -424,6 +465,7 @@
             // 
             // txtPropietarioNombre
             // 
+            this.txtPropietarioNombre.Enabled = false;
             this.txtPropietarioNombre.Location = new System.Drawing.Point(102, 67);
             this.txtPropietarioNombre.Name = "txtPropietarioNombre";
             this.txtPropietarioNombre.Size = new System.Drawing.Size(100, 20);
@@ -473,15 +515,18 @@
             this.btnNuevo.TabIndex = 24;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Enabled = false;
             this.btnGuardar.Location = new System.Drawing.Point(424, 381);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 23;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // groupBox7
             // 
@@ -502,8 +547,27 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Gerente";
             // 
+            // txtGerenteId
+            // 
+            this.txtGerenteId.Enabled = false;
+            this.txtGerenteId.Location = new System.Drawing.Point(102, 31);
+            this.txtGerenteId.Name = "txtGerenteId";
+            this.txtGerenteId.Size = new System.Drawing.Size(100, 20);
+            this.txtGerenteId.TabIndex = 9;
+            this.txtGerenteId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGerenteId_KeyPress);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 34);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(90, 13);
+            this.label21.TabIndex = 8;
+            this.label21.Text = "No. Identificacion";
+            // 
             // txtGerenteSegundoApellido
             // 
+            this.txtGerenteSegundoApellido.Enabled = false;
             this.txtGerenteSegundoApellido.Location = new System.Drawing.Point(102, 141);
             this.txtGerenteSegundoApellido.Name = "txtGerenteSegundoApellido";
             this.txtGerenteSegundoApellido.Size = new System.Drawing.Size(100, 20);
@@ -511,6 +575,7 @@
             // 
             // txtGerenteApelido
             // 
+            this.txtGerenteApelido.Enabled = false;
             this.txtGerenteApelido.Location = new System.Drawing.Point(102, 115);
             this.txtGerenteApelido.Name = "txtGerenteApelido";
             this.txtGerenteApelido.Size = new System.Drawing.Size(100, 20);
@@ -518,6 +583,7 @@
             // 
             // txtGerenteSegundoNombre
             // 
+            this.txtGerenteSegundoNombre.Enabled = false;
             this.txtGerenteSegundoNombre.Location = new System.Drawing.Point(102, 89);
             this.txtGerenteSegundoNombre.Name = "txtGerenteSegundoNombre";
             this.txtGerenteSegundoNombre.Size = new System.Drawing.Size(100, 20);
@@ -525,6 +591,7 @@
             // 
             // txtGerenteNombre
             // 
+            this.txtGerenteNombre.Enabled = false;
             this.txtGerenteNombre.Location = new System.Drawing.Point(102, 63);
             this.txtGerenteNombre.Name = "txtGerenteNombre";
             this.txtGerenteNombre.Size = new System.Drawing.Size(100, 20);
@@ -565,54 +632,6 @@
             this.label20.Size = new System.Drawing.Size(76, 13);
             this.label20.TabIndex = 0;
             this.label20.Text = "Primer Nombre";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 34);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(90, 13);
-            this.label21.TabIndex = 8;
-            this.label21.Text = "No. Identificacion";
-            // 
-            // txtGerenteId
-            // 
-            this.txtGerenteId.Location = new System.Drawing.Point(102, 31);
-            this.txtGerenteId.Name = "txtGerenteId";
-            this.txtGerenteId.Size = new System.Drawing.Size(100, 20);
-            this.txtGerenteId.TabIndex = 9;
-            // 
-            // txtPropietarioId
-            // 
-            this.txtPropietarioId.Location = new System.Drawing.Point(105, 20);
-            this.txtPropietarioId.Name = "txtPropietarioId";
-            this.txtPropietarioId.Size = new System.Drawing.Size(100, 20);
-            this.txtPropietarioId.TabIndex = 11;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(9, 23);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(90, 13);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "No. Identificacion";
-            // 
-            // txtInquilinoId
-            // 
-            this.txtInquilinoId.Location = new System.Drawing.Point(102, 20);
-            this.txtInquilinoId.Name = "txtInquilinoId";
-            this.txtInquilinoId.Size = new System.Drawing.Size(100, 20);
-            this.txtInquilinoId.TabIndex = 13;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 23);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(90, 13);
-            this.label23.TabIndex = 12;
-            this.label23.Text = "No. Identificacion";
             // 
             // Frm_Alquiler
             // 
@@ -687,7 +706,7 @@
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtCantidadDepósito;
+        private System.Windows.Forms.TextBox txtCantidadDeposito;
         private System.Windows.Forms.TextBox txtComisionInicial;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox txtNota;
@@ -702,7 +721,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtComisionMensual;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtInquilinoId;
         private System.Windows.Forms.Label label23;
