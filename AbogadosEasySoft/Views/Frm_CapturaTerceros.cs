@@ -153,5 +153,21 @@ namespace AbogadosEasySoft.Views
             return validation;
         }
         #endregion
+
+        private void BtnImgCedPasap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.openFileDialog1.ShowDialog();
+                if (this.openFileDialog1.FileName.Equals("") == false)
+                {
+                    pictureBox1.Load(this.openFileDialog1.FileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo cargar la imagen: " + ex.ToString());
+            }
+        }
     }
 }
