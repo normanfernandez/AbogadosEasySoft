@@ -447,7 +447,7 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGuardar);
             this.Name = "Frm_Compras";
-            this.Text = "Frm_Compras";
+            this.Text = "Compras";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

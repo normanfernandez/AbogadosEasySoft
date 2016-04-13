@@ -650,7 +650,7 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGuardar);
             this.Name = "Frm_Alquiler";
-            this.Text = "Frm_Alquiler";
+            this.Text = "Alquiler";
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);

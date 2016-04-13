@@ -422,6 +422,7 @@
             this.BtnImgCedPasap.TabIndex = 59;
             this.BtnImgCedPasap.Text = "Clic Aqui Para Insertar Imagen";
             this.BtnImgCedPasap.UseVisualStyleBackColor = true;
+            this.BtnImgCedPasap.Click += new System.EventHandler(this.BtnImgCedPasap_Click);
             // 
             // maskedTexFechAct
             // 

@@ -402,7 +402,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "Frm_Divorcios";
-            this.Text = "Frm_Divorcios";
+            this.Text = "Divorcios";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
